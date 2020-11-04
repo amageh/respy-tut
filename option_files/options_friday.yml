@@ -1,0 +1,21 @@
+n_periods: 10
+simulation_agents: 1000
+simulation_seed: 132
+solution_draws: 500
+solution_seed: 456
+covariates:
+  constant: '1'
+  contemplation_with_friday: exp_friday == 1 and exp_fishing >= 1
+  not_fishing_last_period: lagged_choice_1 != 'fishing'
+negative_choice_set:
+  friday:
+  - period < 2
+  - exp_fishing == 0
+core_state_space_filters:
+- period > 0 and exp_fishing + exp_friday == period and lagged_choice_1 == 'hammock'
+- period <= 2 and exp_friday != 0
+- period >= 3 and period - exp_friday < 2
+- exp_friday > 0 and exp_fishing == 0
+- exp_friday > 0 and exp_fishing == 1 and lagged_choice_1 == 'fishing'
+- period - exp_friday == 2 and lagged_choice_1 != 'friday' and period > 2
+- exp_{choices_w_exp} == 0 and lagged_choice_1 == '{choices_w_exp}'

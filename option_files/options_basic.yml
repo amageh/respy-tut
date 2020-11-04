@@ -1,0 +1,6 @@
+n_periods: 10
+simulation_agents: 1000
+simulation_seed: 1323
+covariates:
+    constant: "1"
+    not_fishing_last_period: "lagged_choice_1 != 'fishing'"

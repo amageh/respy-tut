@@ -1,0 +1,11 @@
+category,name,value
+delta,delta,0.95
+wage_fishing,exp_fishing,0.15
+wage_fishing,age,-0.015
+nonpec_fishing,constant,-1.0
+nonpec_hammock,constant,2.5
+nonpec_hammock,not_fishing_last_period,-1.0
+shocks_sdcorr,sd_fishing,0.5
+shocks_sdcorr,sd_hammock,0.5
+shocks_sdcorr,corr_hammock_fishing,0.0
+lagged_choice_1_hammock,constant,1.0
